@@ -10,7 +10,7 @@
 //! * `DEFAULT_PARAMS_192_BITS` for 192 bits of security.
 //! * `DEFAULT_PARAMS_256_BITS` for 256 bits of security.
 //!
-use libc::{c_char, uint16_t, uint8_t};
+use libc::{c_schar, uint16_t, uint8_t};
 use std::fmt;
 use super::ffi;
 
@@ -18,7 +18,7 @@ use super::ffi;
 #[repr(C)]
 pub struct EncParams {
     /// Name of the parameter set
-    name: [c_char; 11],
+    name: [c_schar; 11],
     /// Number of polynomial coefficients
     n: uint16_t,
     /// Modulus
